@@ -1,5 +1,5 @@
 export function getRandomNumber(num) {
-  const result = Math.trunc(Math.random() * num + 1);
+  const result = Math.trunc(Math.random() * (num + 1));
   return result;
 }
 
@@ -21,4 +21,10 @@ export function readyRandomNumbers(array, res) {
   const randomIndex = getRandomNumber(array.length - 1);
   array[randomIndex] = res;
   return array;
+}
+
+export function calc(expression) {
+  let result = null;
+  eval(`result = ${expression}`);
+  return result;
 }

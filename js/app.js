@@ -1,5 +1,6 @@
 import { mathSigns } from "./constants.js";
 import {
+  calc,
   getRandomNumber,
   getRandomNumberArray,
   readyRandomNumbers,
@@ -17,12 +18,12 @@ function init() {
       b = getRandomNumber(9);
     }
   }
+  const result = calc(`${a}${sign}${b}`);
+  const array = getRandomNumberArray(16, result);
+  const readyArray = readyRandomNumbers(array, result);
 
-  const expression = `${a}${sign}${b}`;
-  let result = 0;
-  eval(`result = ${expression}`);
-  console.log(result);
-
-  console.log(readyRandomNumbers(getRandomNumberArray(16, result), result));
+  console.log(readyArray);
+  console.log(`${a}${sign}${b} = ${result}`);
 }
 init();
+setInterval(init, 7000);
