@@ -1,5 +1,9 @@
 import { mathSigns } from "./constants.js";
-import { getRandomNumber, getRandomNumberArray } from "./functions.js";
+import {
+  getRandomNumber,
+  getRandomNumberArray,
+  readyRandomNumbers,
+} from "./functions.js";
 
 function init() {
   let a = getRandomNumber(9);
@@ -19,6 +23,6 @@ function init() {
   eval(`result = ${expression}`);
   console.log(result);
 
-  console.log(getRandomNumberArray(16, result));
+  console.log(readyRandomNumbers(getRandomNumberArray(16, result), result));
 }
 init();
